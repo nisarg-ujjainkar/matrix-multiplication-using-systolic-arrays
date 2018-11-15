@@ -59,22 +59,84 @@ module multip(a1,a2,a3,a4,a5,a6,a7,a8,a9,b1,b2,b3,b4,b5,b6,b7,b8,b9,clk,o1,o2,o3
     begin
         i=i+1;
         case(i)
-            1:
+//            1:
+//                begin
+//                    ai[0]=a1; ai[1]=a2; ai[2]=a3; ai[3]=0; ai[4]=0;
+//                    bi[0]=b1; bi[1]=b4; bi[2]=b7; bi[3]=0; bi[4]=0;
+//                end
+//            2:
+//                begin
+//                    ai[0]=a1; ai[1]=a2; ai[2]=a3; ai[3]=0; ai[4]=0;
+//                    bi[0]=b1; bi[1]=b4; bi[2]=b7; bi[3]=0; bi[4]=0;
+//                end
+//            3:
+//                begin
+//                    ai[0]=a1; ai[1]=a2; ai[2]=a3; ai[3]=0; ai[4]=0;
+//                    bi[0]=b1; bi[1]=b4; bi[2]=b7; bi[3]=0; bi[4]=0;
+//                end
+            4:
                 begin
                     ai[0]=a1; ai[1]=a2; ai[2]=a3; ai[3]=0; ai[4]=0;
                     bi[0]=b1; bi[1]=b4; bi[2]=b7; bi[3]=0; bi[4]=0;
                 end
-            2:
+            5:
+                                begin
+                                    ai[0]=a1; ai[1]=a2; ai[2]=a3; ai[3]=0; ai[4]=0;
+                                    bi[0]=b1; bi[1]=b4; bi[2]=b7; bi[3]=0; bi[4]=0;
+                                end
+            6:
+                                                begin
+                                                    ai[0]=a1; ai[1]=a2; ai[2]=a3; ai[3]=0; ai[4]=0;
+                                                    bi[0]=b1; bi[1]=b4; bi[2]=b7; bi[3]=0; bi[4]=0;
+                                                end
+            7:
+                                                                begin
+                                                                    ai[0]=a1; ai[1]=a2; ai[2]=a3; ai[3]=0; ai[4]=0;
+                                                                    bi[0]=b1; bi[1]=b4; bi[2]=b7; bi[3]=0; bi[4]=0;
+                                                                end
+            //2nd ip
+            8:
                 begin
                     ai[0]=0; ai[1]=a4; ai[2]=a5; ai[3]=a6; ai[4]=0;
                     bi[0]=0; bi[1]=b2; bi[2]=b5; bi[3]=b8; bi[4]=0;
                 end
-            3:
+            9:
+                                begin
+                                    ai[0]=0; ai[1]=a4; ai[2]=a5; ai[3]=a6; ai[4]=0;
+                                    bi[0]=0; bi[1]=b2; bi[2]=b5; bi[3]=b8; bi[4]=0;
+                                end
+            10:
+                                                begin
+                                                    ai[0]=0; ai[1]=a4; ai[2]=a5; ai[3]=a6; ai[4]=0;
+                                                    bi[0]=0; bi[1]=b2; bi[2]=b5; bi[3]=b8; bi[4]=0;
+                                                end
+            11:
+                                                                begin
+                                                                    ai[0]=0; ai[1]=a4; ai[2]=a5; ai[3]=a6; ai[4]=0;
+                                                                    bi[0]=0; bi[1]=b2; bi[2]=b5; bi[3]=b8; bi[4]=0;
+                                                                end
+            //3rd ip    
+            12:
                 begin
                     ai[0]=0; ai[1]=0; ai[2]=a7; ai[3]=a8; ai[4]=a9;
                     bi[0]=0; bi[1]=0; bi[2]=b3; bi[3]=b6; bi[4]=b9;
                 end
-            7:
+            13:
+                                begin
+                                    ai[0]=0; ai[1]=0; ai[2]=a7; ai[3]=a8; ai[4]=a9;
+                                    bi[0]=0; bi[1]=0; bi[2]=b3; bi[3]=b6; bi[4]=b9;
+                                end
+            14:
+                                                begin
+                                                    ai[0]=0; ai[1]=0; ai[2]=a7; ai[3]=a8; ai[4]=a9;
+                                                    bi[0]=0; bi[1]=0; bi[2]=b3; bi[3]=b6; bi[4]=b9;
+                                                end
+            15:
+                                                                begin
+                                                                    ai[0]=0; ai[1]=0; ai[2]=a7; ai[3]=a8; ai[4]=a9;
+                                                                    bi[0]=0; bi[1]=0; bi[2]=b3; bi[3]=b6; bi[4]=b9;
+                                                                end
+            28:
                 begin
                     ai[0]=0; ai[1]=0; ai[2]=0; ai[3]=0; ai[4]=0;
                     bi[0]=0; bi[1]=0; bi[2]=0; bi[3]=0; bi[4]=0;
@@ -84,7 +146,7 @@ module multip(a1,a2,a3,a4,a5,a6,a7,a8,a9,b1,b2,b3,b4,b5,b6,b7,b8,b9,clk,o1,o2,o3
                     o4=pe_out3[17]; 
                     o7=pe_out3[16]; 
                 end
-            8:
+            32:
                 begin
                     ai[0]=0; ai[1]=0; ai[2]=0; ai[3]=0; ai[4]=0;
                     bi[0]=0; bi[1]=0; bi[2]=0; bi[3]=0; bi[4]=0;
@@ -92,7 +154,7 @@ module multip(a1,a2,a3,a4,a5,a6,a7,a8,a9,b1,b2,b3,b4,b5,b6,b7,b8,b9,clk,o1,o2,o3
                     o6=pe_out3[15]; 
                     o8=pe_out3[17];
                 end
-            9:
+            36:
                 begin
                     ai[0]=0; ai[1]=0; ai[2]=0; ai[3]=0; ai[4]=0;
                     bi[0]=0; bi[1]=0; bi[2]=0; bi[3]=0; bi[4]=0;

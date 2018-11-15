@@ -15,7 +15,7 @@ module nBitMult(p,a,b,clk);
             begin
             partialProduct[i] = {n{ b[i] } } & a[n-1:0];  //something might be wrong here
             partialProduct[i] = partialProduct[i]<<i;  
-         
+            
             end
         
         p =    partialProduct[0] + partialProduct[1] + partialProduct[2] + partialProduct[3] + partialProduct[4] ;

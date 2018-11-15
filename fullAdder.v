@@ -9,6 +9,6 @@ module fullAdder(sum,a,b,cin,clk);
     output reg [n:0]sum;
     always@(posedge clk)
         begin
-         sum = a+b+cin;
+            sum = a+b+cin;
         end
 endmodule

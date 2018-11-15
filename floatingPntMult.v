@@ -6,7 +6,6 @@ module floatingPntMult(out,a,b,clk);
     input [7:0]a,b;
     output reg [7:0]out;
     wire [3:0]w1,w0;
-    wire w2;
     wire [9:0]w3;//mantisa multiplication
     reg [4:0]m1,m2;//multiplicands
    always@(posedge clk)

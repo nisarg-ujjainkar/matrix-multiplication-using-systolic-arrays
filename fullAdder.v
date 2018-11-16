@@ -3,7 +3,7 @@
 
 module fullAdder(sum,a,b,cin,clk);
     
-    parameter n = 3;
+    (*dont_touch = "true"*)parameter n = 3;
     input [n-1:0]a,b;
     input cin,clk;
     output reg [n:0]sum;

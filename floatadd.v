@@ -24,10 +24,10 @@ module flotAdd(out,a,b,clk);
     input [7:0]a,b;
     input clk;
     output reg [7:0] out;
-    reg [2:0]diff=3'b000;
-    reg [4:0]m1,m2 = 5'b000000;
-    reg [5:0]sum=6'b000000;
-    reg [11:0] shftMant = 12'b000000000000;
+    (*dont_touch = "true"*)reg [2:0]diff=3'b000;
+    (*dont_touch = "true"*)reg [4:0]m1,m2 = 5'b000000;
+    (*dont_touch = "true"*)reg [5:0]sum=6'b000000;
+    (*dont_touch = "true"*)reg [11:0] shftMant = 12'b000000000000;
     //addtion only for positive numbers
     always@(posedge clk)
         begin

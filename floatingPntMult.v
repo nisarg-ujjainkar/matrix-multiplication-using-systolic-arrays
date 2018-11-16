@@ -5,9 +5,9 @@ module floatingPntMult(out,a,b,clk);
     //a,b floating point numbers
     input [7:0]a,b;
     output reg [7:0]out;
-    wire [3:0]w1,w0;
-    wire [9:0]w3;//mantisa multiplication
-    reg [4:0]m1,m2;//multiplicands
+    (*dont_touch = "true"*)wire [3:0]w1,w0;
+    (*dont_touch = "true"*)wire [9:0]w3;//mantisa multiplication
+    (*dont_touch = "true"*)reg [4:0]m1,m2;//multiplicands
    always@(posedge clk)
     begin 
         m1[4] = 1;

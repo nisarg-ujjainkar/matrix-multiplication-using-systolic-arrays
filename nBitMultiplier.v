@@ -2,13 +2,13 @@
 
 
 module nBitMult(p,a,b,clk);
-    parameter n =5;
+    (*dont_touch = "true"*)parameter n =5;
     input [n-1:0]a,b;
     input clk;
     output reg [2*n-1:0]p;
-    reg [2*n-1:0]partialProduct[n-1:0];
+    (*dont_touch = "true"*)reg [2*n-1:0]partialProduct[n-1:0];
     
-    integer i;
+    (*dont_touch = "true"*)integer i;
     always@(posedge clk)
         begin
         for (i =0; i<n;i= i+1)

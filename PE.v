@@ -8,7 +8,7 @@ module PE(a,b,c,o1,o2,o3,clk);
     input [2*n+3:0]c;
     output reg [n-1:0]o1,o2;
     output reg [2*n+3:0]o3;
-    wire [2*n+3:0]mul;
+    (*dont_touch = "true"*)wire [2*n+3:0]mul;
     assign mul=a*b;
     always@(posedge clk)
         begin

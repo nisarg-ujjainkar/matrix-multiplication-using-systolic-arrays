@@ -2,10 +2,13 @@
 
 
 module PE(a,b,c,o1,o2,o3,clk);
+    parameter n=5;
     input clk;
-    input [7:0]a,b,c;
-    output reg [7:0]o1,o2,o3;
-    wire [7:0]mul;
+    input [n-1:0]a,b;
+    input [2*n+3:0]c;
+    output reg [n-1:0]o1,o2;
+    output reg [2*n+3:0]o3;
+    wire [2*n+3:0]mul;
     assign mul=a*b;
     always@(posedge clk)
         begin

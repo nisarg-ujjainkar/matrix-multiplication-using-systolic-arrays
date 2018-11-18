@@ -1,16 +1,20 @@
 `timescale 1ns / 1ps
 
-module multip(a1,a2,a3,a4,a5,a6,a7,a8,a9,b1,b2,b3,b4,b5,b6,b7,b8,b9,clk,o1,o2,o3,o4,o5,o6,o7,o8,o9);
-    input [7:0]a1,a2,a3,a4,a5,a6,a7,a8,a9;
-    input [7:0]b1,b2,b3,b4,b5,b6,b7,b8,b9;
+module multip(a1,a2,a3,a4,a5,a6,a7,a8,a9,b1,b2,b3,b4,b5,b6,b7,b8,b9,clk,o);
+    parameter n=5;
+    input [n-1:0]a1,a2,a3,a4,a5,a6,a7,a8,a9;
+    input [n-1:0]b1,b2,b3,b4,b5,b6,b7,b8,b9;
     input clk;
-    output reg [8:0]o1=0,o2=0,o3=0,o4=0,o5=0,o6=0,o7=0,o8=0,o9=0;
-    wire [7:0] pe_out1[18:0];
-    wire [7:0] pe_out2[18:0];
-    wire [7:0] pe_out3[18:0];
-    wire [7:0] de_out1[5:0];
-    wire [7:0] de_out2[5:0];
-    reg [7:0]ai[0:4],bi[0:4];
+    output reg [n-2:0]o;
+    reg flag=1'b1;
+    reg [2*n+3:0]sum;
+    reg [2*n+3:0]o1=0,o2=0,o3=0,o4=0,o5=0,o6=0,o7=0,o8=0,o9=0;
+    wire [n-1:0] pe_out1[18:0];
+    wire [n-1:0] pe_out2[18:0];
+    wire [2*n+3:0] pe_out3[18:0];
+    wire [n-1:0] de_out1[5:0];
+    wire [n-1:0] de_out2[5:0];
+    reg [n-1:0]ai[0:4],bi[0:4];
     integer j; 
     initial begin
       for (j=0;j<=4;j=j+1)
@@ -78,7 +82,7 @@ module multip(a1,a2,a3,a4,a5,a6,a7,a8,a9,b1,b2,b3,b4,b5,b6,b7,b8,b9,clk,o1,o2,o3
                 begin
                     ai[0]=0; ai[1]=0; ai[2]=0; ai[3]=0; ai[4]=0;
                     bi[0]=0; bi[1]=0; bi[2]=0; bi[3]=0; bi[4]=0;
-                    o1=pe_out3[18];
+                    o1=a1*b1;
                     o2=pe_out3[15]; 
                     o3=pe_out3[11]; 
                     o4=pe_out3[17]; 
@@ -97,6 +101,84 @@ module multip(a1,a2,a3,a4,a5,a6,a7,a8,a9,b1,b2,b3,b4,b5,b6,b7,b8,b9,clk,o1,o2,o3
                     ai[0]=0; ai[1]=0; ai[2]=0; ai[3]=0; ai[4]=0;
                     bi[0]=0; bi[1]=0; bi[2]=0; bi[3]=0; bi[4]=0;
                     o9=pe_out3[18];
+                end
+            10:
+                begin
+                    sum=o1+o2+o3+o4+o5+o6+o7+o8+o9;
+                    for(j=11;j>=3;j=j-1)
+                        begin
+                            if(sum[j]==1)
+                                case(j)
+                                    11:
+                                        begin
+                                            if(flag)
+                                                begin
+                                                    o=sum[11:8];
+                                                    flag=1'b0;
+                                                end
+                                        end
+                                    10:
+                                        begin
+                                            if(flag)
+                                                begin
+                                                    o=sum[10:7];
+                                                    flag=1'b0;
+                                                end
+                                        end
+                                    9:
+                                        begin
+                                            if(flag)
+                                                begin
+                                                    o=sum[9:6];
+                                                    flag=1'b0;
+                                                end
+                                        end
+                                    8:
+                                        begin
+                                            if(flag)
+                                                begin
+                                                    o=sum[8:5];
+                                                    flag=1'b0;
+                                                end
+                                        end
+                                    7:
+                                        begin
+                                            if(flag)
+                                                begin
+                                                    o=sum[7:4];
+                                                    flag=1'b0;
+                                                end
+                                        end
+                                    6:
+                                        begin
+                                            if(flag)
+                                                begin
+                                                    o=sum[6:3];
+                                                    flag=1'b0;
+                                                end
+                                        end
+                                    5:
+                                        begin
+                                            if(flag)
+                                                begin
+                                                    o=sum[5:2];
+                                                    flag=1'b0;
+                                                end
+                                        end
+                                    4:
+                                        begin
+                                            if(flag)
+                                                begin                                                
+                                                    o=sum[4:1];
+                                                    flag=1'b0;
+                                                end
+                                        end
+                                    3:
+                                        begin
+                                            o=sum[3:0];
+                                        end
+                                endcase
+                        end
                 end
             default:
                 begin

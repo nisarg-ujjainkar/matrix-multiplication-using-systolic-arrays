@@ -6,15 +6,15 @@ module multip(a1,a2,a3,a4,a5,a6,a7,a8,a9,b1,b2,b3,b4,b5,b6,b7,b8,b9,clk,o);
     input [n-1:0]b1,b2,b3,b4,b5,b6,b7,b8,b9;
     input clk;
     output reg [n-2:0]o;
-    reg flag=1'b1;
-    reg [2*n+3:0]sum;
-    reg [2*n+3:0]o1=0,o2=0,o3=0,o4=0,o5=0,o6=0,o7=0,o8=0,o9=0;
-    wire [n-1:0] pe_out1[18:0];
-    wire [n-1:0] pe_out2[18:0];
-    wire [2*n+3:0] pe_out3[18:0];
-    wire [n-1:0] de_out1[5:0];
-    wire [n-1:0] de_out2[5:0];
-    reg [n-1:0]ai[0:4],bi[0:4];
+    (*dont_touch = "true"*)reg flag=1'b1;
+    (*dont_touch = "true"*)reg [2*n+3:0]sum;
+    (*dont_touch = "true"*)reg [2*n+3:0]o1=0,o2=0,o3=0,o4=0,o5=0,o6=0,o7=0,o8=0,o9=0;
+    (*dont_touch = "true"*)wire [n-1:0] pe_out1[18:0];
+    (*dont_touch = "true"*)wire [n-1:0] pe_out2[18:0];
+    (*dont_touch = "true"*)wire [2*n+3:0] pe_out3[18:0];
+    (*dont_touch = "true"*)wire [n-1:0] de_out1[5:0];
+    (*dont_touch = "true"*)wire [n-1:0] de_out2[5:0];
+    (*dont_touch = "true"*)reg [n-1:0]ai[0:4],bi[0:4];
     integer j; 
     initial begin
       for (j=0;j<=4;j=j+1)

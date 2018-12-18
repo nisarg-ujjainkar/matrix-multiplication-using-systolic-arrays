@@ -2,7 +2,7 @@
 
 
 module De(a,b,o1,o2,clk);
-    parameter n=5;
+    parameter n=8;
     input clk;
     input [n-1:0]a,b;
     output reg [n-1:0]o1,o2;
